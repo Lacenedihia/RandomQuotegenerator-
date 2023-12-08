@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import quotes from "./assets/quotes.json";
 import { FaXTwitter, FaQuoteLeft, FaQuoteRight } from "react-icons/fa6";
@@ -49,6 +50,9 @@ function App() {
       style={{ backgroundColor: randomColor, transition }}
     >
       <div id="quote-box">
+      <h3 id="header" style={{ color: randomColor, transition}}>
+          Quote of the Day
+        </h3>
         <div
           className="quote-content"
           style={{ color: randomColor, transition }}
@@ -60,7 +64,9 @@ function App() {
           </h2>
           <h4 id="author">- {quote.author}</h4>
         </div>
+
         <div className="buttons">
+          
           <a
             href={`https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=${quote.quote}`}
             id="tweet-quote"
@@ -72,6 +78,7 @@ function App() {
           >
            <FaXTwitter color="white" />
           </a>
+          
           <button
             id="new-quote"
             onClick={changeQuote}
@@ -79,6 +86,9 @@ function App() {
           >
             Change Quote
           </button>
+          
+          
+      
         </div>
       </div>
     </div>
